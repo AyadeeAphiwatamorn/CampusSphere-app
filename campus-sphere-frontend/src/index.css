@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* GLOBAL NAVBAR STYLES */
+.global-nav-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.global-nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 200;
+}
+
+.global-nav-dropdown-wrapper:hover .global-nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.global-nav-dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+  text-decoration: none;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.global-nav-dropdown-menu a:hover {
+  background-color: rgba(106, 130, 251, 0.1);
+  color: #6a82fb;
+}
+
+.nav-link-btn {
+  text-decoration: none;
+  color: #2d3748;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link-btn:hover {
+  color: #6a82fb;
+}

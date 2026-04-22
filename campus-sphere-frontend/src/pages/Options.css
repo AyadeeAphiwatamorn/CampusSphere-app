@@ -1,0 +1,292 @@
+/* Options.css */
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;600;700&display=swap");
+
+.options-page {
+  font-family: "Google Sans", sans-serif;
+  color: #2d3748;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../icons/bg_options.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ==================== HERO SECTION ==================== */
+.options-hero-section {
+  position: relative;
+  background: transparent;
+  padding-bottom: 2rem;
+}
+
+/* --- NAVBAR (mirrors Home) --- */
+.options-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.options-logo {
+  display: flex;
+  align-items: center;
+}
+
+.options-logo img {
+  height: 35px;
+}
+
+.options-nav-links {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.options-nav-links span {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.options-nav-links span:hover {
+  color: #6a82fb;
+}
+
+.options-profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.options-profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.options-profile-icon:hover {
+  transform: scale(1.05);
+}
+
+.options-dropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  min-width: 150px;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+  z-index: 100;
+}
+
+.options-dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.options-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.options-dropdown li {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.options-dropdown li:hover {
+  background-color: rgba(106, 130, 251, 0.1);
+}
+
+.options-dropdown ul a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.options-dropdown ul a:hover {
+  color: #6a82fb;
+}
+
+/* --- HERO CONTENT --- */
+.options-hero-content {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+}
+
+.options-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.75rem;
+}
+
+.options-hero-highlight {
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #7c5cff, #6aabff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+
+.options-hero-subtitle {
+  font-size: 1.05rem;
+  color: #718096;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ==================== CARDS SECTION ==================== */
+.options-cards-section {
+  position: relative;
+  background: transparent;
+  padding: 2rem 2rem 6rem;
+  flex: 1;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* --- INDIVIDUAL CARD --- */
+.option-card {
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(196, 208, 254, 0.45),
+    rgba(239, 240, 254, 0.15)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.35s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 50px rgba(106, 171, 255, 0.28),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.option-card-inner {
+  padding: 2.5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 240px;
+}
+
+.option-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 12px rgba(106, 130, 251, 0.15));
+}
+
+.option-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.option-btn {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(106, 171, 255, 0.18);
+  color: #1a202c;
+  padding: 0.7rem 2.5rem;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.option-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(106, 171, 255, 0.3);
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 900px) {
+  .options-navbar {
+    padding: 1.5rem 2rem;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .options-hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .options-nav-links {
+    display: none;
+  }
+
+  .options-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .option-card-inner {
+    min-height: 200px;
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .option-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
